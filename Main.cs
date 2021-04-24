@@ -14,6 +14,7 @@
  *              
  *              Használat: Discordon belül szerveredre jobb klikk>Szerver Beállítások>Integrations>Webhooks létrehozol egyet és a linkjét az általam készített programba másolod
  *                         a nevet tudod discordban is változtatni de akár távolról is.
+ * --Built by: Microsoft Visual Studio Community 2019 v16.8.4: C# .NET 4.7.2
  */
 using System;
 using System.Collections.Generic;
@@ -139,8 +140,10 @@ namespace COMDROID_DISCORD_WEBHOOK_MANAGER
                         String usrnm = node.SelectSingleNode("username").InnerText;
                         String url = node.SelectSingleNode("url").InnerText;
                         String ischecked = node.SelectSingleNode("ticked").InnerText;
+                        String lastmsg = node.SelectSingleNode("lastmsg").InnerText;
                         textBoxURL.Text = url;
                         textBoxUsrName.Text = usrnm;
+                        textBoxMsg.Text = lastmsg;
                         if (ischecked == "True")
                         {
                             checkBoxCustomUsrNm.Checked = true;
@@ -180,7 +183,7 @@ namespace COMDROID_DISCORD_WEBHOOK_MANAGER
             else
             {
                 XmlDocument doc = new XmlDocument();
-                doc.LoadXml("<discord_mssngr><username>" + textBoxUsrName.Text + "</username><url>" + textBoxURL.Text + "</url><ticked>" + checkBoxCustomUsrNm.Checked.ToString() + "</ticked><creator_keszito>Alex Hegedus</creator_keszito></discord_mssngr>"); //XML tartalmát létrehozzuk
+                doc.LoadXml("<discord_mssngr><username>" + textBoxUsrName.Text + "</username><url>" + textBoxURL.Text + "</url><ticked>" + checkBoxCustomUsrNm.Checked.ToString() + "</ticked><lastmsg>+</lastmsg><creator_keszito>Alex Hegedus</creator_keszito></discord_mssngr>"); //XML tartalmát létrehozzuk
 
                 doc.PreserveWhitespace = false; 
                 doc.Save(@"settings.xml"); //Elmenti az beállítások xmlt  -=-  save settings xml              
@@ -199,11 +202,15 @@ namespace COMDROID_DISCORD_WEBHOOK_MANAGER
             {
                 textBoxUsrName.ReadOnly = false;
             }
+            else
+            {
+                textBoxUsrName.ReadOnly = true;
+            }
         }
 
         private void butAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Made by Alex Hegedűs(jacekbacsi01) GitHub: github.com/jacekbacsi01 Written in C# 2020.01.16. -A Hungarian COM_DROID Team Project.-");
+            MessageBox.Show("Made by Alex Hegedűs(jacekbacsi01) GitHub: github.com/jacekbacsi01 \n\t\t   Written in C#.NET 4.7.2. ˇ2020.01.16.ˇ \n\t\t-A Hungarian COM_DROID Team Project.-");
         }
     }
 }

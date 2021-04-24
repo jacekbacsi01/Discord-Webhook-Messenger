@@ -40,9 +40,9 @@
             this.butAbout = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.checkBoxCustomUsrNm = new System.Windows.Forms.CheckBox();
+            this.butSend = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxUsrName = new System.Windows.Forms.TextBox();
-            this.butSend = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,6 +149,20 @@
             this.checkBoxCustomUsrNm.UseVisualStyleBackColor = true;
             this.checkBoxCustomUsrNm.CheckedChanged += new System.EventHandler(this.checkBoxCustomUsrNm_CheckedChanged);
             // 
+            // butSend
+            // 
+            this.butSend.BackgroundImage = global::COMDROID_DISCORD_WEBHOOK_MANAGER_BY_ALEXHEGEDUS.Properties.Resources.discord_send_img;
+            this.butSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.butSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.butSend.Location = new System.Drawing.Point(6, 42);
+            this.butSend.Name = "butSend";
+            this.butSend.Size = new System.Drawing.Size(298, 98);
+            this.butSend.TabIndex = 1;
+            this.butSend.Text = "Küldés";
+            this.butSend.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.butSend.UseVisualStyleBackColor = true;
+            this.butSend.Click += new System.EventHandler(this.butSend_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -165,20 +179,6 @@
             this.textBoxUsrName.ReadOnly = true;
             this.textBoxUsrName.Size = new System.Drawing.Size(295, 20);
             this.textBoxUsrName.TabIndex = 9;
-            // 
-            // butSend
-            // 
-            this.butSend.BackgroundImage = global::COMDROID_DISCORD_WEBHOOK_MANAGER_BY_ALEXHEGEDUS.Properties.Resources.discord_send_img;
-            this.butSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.butSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.butSend.Location = new System.Drawing.Point(6, 42);
-            this.butSend.Name = "butSend";
-            this.butSend.Size = new System.Drawing.Size(298, 98);
-            this.butSend.TabIndex = 1;
-            this.butSend.Text = "Küldés";
-            this.butSend.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.butSend.UseVisualStyleBackColor = true;
-            this.butSend.Click += new System.EventHandler(this.butSend_Click);
             // 
             // Main
             // 
@@ -199,7 +199,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "Discord Webhook Messenger v0.2 by Alex Hegedűs";
+            this.Text = "Discord Webhook Messenger v0.2 by Alex Hegedűs (C# .NET 4.7.2)";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
